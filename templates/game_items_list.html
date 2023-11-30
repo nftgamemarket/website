@@ -1,0 +1,147 @@
+
+<style type="text/css">
+.equipment-badge {
+  position: relative; 
+  height: 67px; 
+  width: 67px; 
+  border-radius: 50%;
+  border: 3px solid;
+}
+
+.equipment-l-badge { background: conic-gradient( from -135deg at 50% 50%, goldenrod, gold, yellow, gold, goldenrod); border-color: goldenrod; }
+.equipment-e-badge { background: conic-gradient( from -140deg at 50% 50%, darkred, darkred, red, gold, red, darkred, darkred); border-color: darkred; }
+.equipment-r-badge { background: conic-gradient( from -135deg at 50% 50%, darkblue, blue, lightcyan, blue, darkblue); border-color: blue; }
+.equipment-u-badge { background: conic-gradient( from -135deg at 50% 50%, darkgreen, green, greenyellow, green, darkgreen); border-color: green; }
+
+.equipment-enchance {
+  position: absolute; 
+  top:-8px; 
+  left:70%; 
+  color: lightyellow; 
+  font-size: 17px; 
+  font-weight: bold; 
+  text-shadow: 1px 1px 1px #000;
+}
+
+.equipment-tier {
+  position: absolute; 
+  top:70%; 
+  left:-5px; 
+  color: lightyellow; 
+  font-size: 12px; 
+  font-weight: bold; 
+  border-radius: 50%; 
+  border: 2px solid #9f916c; 
+  background-color: #000;
+  width: 24px; 
+  height: 24px; 
+  padding-top: 2px;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.equipment-image {
+  width: 42px; margin-top: 6px
+}
+
+.skill-badge {
+  position: relative; 
+  height: 70px; 
+  width: 70px; 
+  background: radial-gradient(black,black,darkgray); 
+  border-radius: 50%; 
+}
+
+.skill-tier { 
+  position: absolute; top:70%; left:-8px; background-color: #333; color: lightyellow; font-size: 11px; 
+  font-weight: bold; border-radius: 50%; width: 25px; height: 25px; padding-top: 2px;
+}
+
+.skill-ult-badge {
+  position: relative; 
+  margin-top: -1px;
+  height: 90px; 
+  width: 90px; 
+  background: radial-gradient(black,black,darkgray); 
+  border-radius: 50%; 
+}
+  
+.skill-ult-tier { 
+  position: absolute; top:80%; left:20%; background-color: #333; color: lightyellow; font-size: 11px; text-align: center;
+  font-weight: bold; border-radius: 20px; width: 50px; height: 25px; padding-top: 1px;
+}
+
+.skill-l-badge, .skill-l-tier { border: 2px solid goldenrod; }
+.skill-e-badge, .skill-e-tier { border: 2px solid red; }
+.skill-r-badge, .skill-r-tier { border: 2px solid #5176AD; }
+.skill-u-badge, .skill-u-tier { border: 2px solid lightgray; }
+.skill-ult-l-badge, .skill-ult-l-tier { border: 3px solid #fd0; }
+.skill-ult-e-badge, .skill-ult-e-tier { border: 3px solid #ff002e; }
+.skill-ult-n-badge, .skill-ult-n-tier { border: 3px solid rgb(87, 86, 139); }
+
+
+.spirit-badge {
+  display: flex; position: relative; bottom: 0; left: 0; justify-content: center; align-items: center; 
+  width: 60px; height: 60px; background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-legendary.webp) 0 0/cover no-repeat;
+}
+  
+.spirit-tier {
+  position: absolute; top:70%; left:-8px; background-color: #333; color: lightyellow; font-size: 12px; font-weight: bold; 
+  border-radius: 50%; border: 2px solid #9f916c; width: 24px; height: 24px; padding-top: 2px;
+}
+  
+</style>
+
+<div class="container-fluid">
+  <div class="row my-5">
+    <div class="col mx-auto col-3 text-center text-white fw-bold bg-secondary">
+      <p>list of NFTs on sale</p>
+    </div>
+  </div>
+  <div class="container-fluid mx-0 px-0">
+{% for index in range(5) %}
+    <div class="row border-secondary border-bottom my-2">
+      <div class="col-2 ps-0 bg-red" style="backgroung-image: conic-gradient(blue, yellowgreen);"">
+        <div class="p-3 py-4" ">
+          <img style="height: 100px" src="https://file.mir4global.com/xdraco-thumb/card-nft/sorcerer-grade5.webp">
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="row mb-2">
+          {% for equi in range(15) %}
+          <div class="m-1 me-2 text-white text-center bg-dark equipment-badge equipment-e-badge">
+            <span id="item-enchance" class="text-center equipment-enchance">+7</span>
+            <span id="equipment-tier" class="text-center equipment-tier">IV</span>
+            <img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pcm_01/Icon_WPN_PCM_09.png" alt="" class="equipment-image">
+          </div>
+          {% endfor %}
+        </div>
+        
+        <div class="row mb-2">
+          <!--h2 class="col" style="width: 140px;">SKILLs</h2-->
+          {% for skill in range(13) %}
+            {% if skill+1 == 1 %}
+                <div class="m-1 me-2 text-white skill-ult-badge skill-ult-l-badge">
+                <span id="skill-ult-tier" class="skill-ult-tier skill-ult-l-tier">11</span>
+            {% else %}                  
+                <div class="m-1 me-2 mt-3 text-white text-center skill-badge skill-e-badge">
+                <span id="skill-tier" class="text-center skill-tier skill-e-tier">11</span>
+            {% endif %}
+              Skill {{ skill + 1 }}
+              </div>
+          {% endfor %}
+        </div>
+        
+        <div class="row mb-2 align-self-start">
+          <!--h2 class="col align-self-start" style="width: 140px;">SPIRITS</h2-->
+          {% for spirit in range(20) %}
+           <div class="m-1 me-2 text-white text-center bg-dark spirit-badge" >
+              <span id="spirit-tier" class="text-center spirit-tier">IV</span>
+              <img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Pet/Pet_Portrait/Icon_Item_Pet_IceGolem01.png" width="40" alt="">
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+{% endfor %}
+  </div>
+</div>
