@@ -130,26 +130,20 @@
   max-width: 200px ! important;
   min-height: 300px ! important;
   max-height: 300px ! important;
-  border-radius: 8px;
-  border-style: solid;
-  border-width: 3px;
-  
+  border-radius: 10px;
+  border: 1px double goldenrod;
 } 
 
 .card_bg_l { 
-  border-color: darkgoldenrod;
   background: conic-gradient(from 10deg, lightyellow, darkgoldenrod, gold, darkgoldenrod, gold,  goldenrod, gold, goldenrod, white,  goldenrod,gold, goldenrod, gold, darkgoldenrod, gold, darkgoldenrod,  lightyellow);
 }
-.card_bg_e {
-  border-color: darkred;
+.card_bg_e { 
   background: conic-gradient(from 10deg, lightcoral, darkred, #c4492d, darkred, #c4492d,  red, #c4492d, red, white,  red, #c4492d, red, #c4492d, darkred, #c4492d, darkred,  lightcoral);
 }
-.card_bg_r {
-  border-color: darkblue;
+.card_bg_r { 
   background: conic-gradient(from 10deg, lightblue, darkblue, #2a94c4, darkblue, #2a94c4,  blue, #2a94c4, blue, white,  blue, #2a94c4, blue, #2a94c4, darkblue, #2a94c4, darkblue,  lightblue);
 }
-.card_bg_uc {
-  border-color: darkgreen;
+.card_bg_uc { 
   background: conic-gradient(from 10deg, lightgreen, darkgreen, #3d9d56, darkgreen, #3d9d56,  green, #3d9d56, green, white,  green, #3d9d56, green, #3d9d56, darkgreen, #3d9d56, darkgreen,  lightgreen);
 }
 
@@ -194,7 +188,7 @@
   height: 55%;
   background-color: #FFF; 
   color: #000;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 10px 10px;
 }
 
 .card_bottom_bg_l { background: linear-gradient(goldenrod 1%, #e7dfce 10%, #fcfaf8, #fcfaf8); }
@@ -267,12 +261,12 @@
   {% for char_class_id in range(6) %}
     <div class="row my-3">
       
-      <div class="col me-2 card_base card_bg_e">
+      <div class="col me-2 card_base card_bg_l">
           
           <div class="card_class_icon card_class_icon-1 m-2"></div>
           <span class="nft_lvl m-2 text-center px-2">Level 132</span>
           <img class="card_class_img" src="https://file.mir4global.com/xdraco-thumb/card-nft/arbalist-grade5.webp">
-          <div class="card_bottom card_bottom_bg_e text-center">
+          <div class="card_bottom card_bottom_bg_l text-center">
             <span class="nft_power">Power</span>
             <span class="nft_price">Price</span>
             <span class="card_nft_name">Nome Muito Longo</span>
