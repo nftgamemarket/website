@@ -1,0 +1,82 @@
+<div class="nft">
+  <div class="col1">
+  
+    <div class="card_container card-bg card-bg-e">
+      
+      <div class="card-item card-icon">
+        <div class="icon-img"></div>
+      </div>
+      
+      <div class="card-item card-lvl">
+        <span>Level<br><b>999</b></span>
+      </div>
+      
+      <div class="card-item card-img">
+        <img class="card-img-src" src="https://file.mir4global.com/xdraco-thumb/card-nft/taoist-grade4.webp">
+      </div>
+      
+      <div class="card-item card-bottom card-bottom-bg card-bottom-bg-e">              
+        <div class="card-name">
+          <span>Name longo</span>
+        </div>
+        
+        <div class="card-class">
+          <span>classe</span>
+        </div>
+        
+        <div class="card-powerscore">
+          <div class="power-name">POWERScore</div>
+          <div class="power-value">000,000</div>
+        </div>
+        
+        <div class="card-price">
+          <div class="price-name">Price</div>
+          <div class="price-value">000,000</div>
+        </div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="col2 details-container">
+
+  <div class="equip-container">
+    <div class="equip-container-title"><span>Gears</span></div>
+  {% for class_id_smi in range(15) %}
+    <div class="equip-each-container">
+      <div class="equip-enhance">+12</div>
+      <div class="equip-img equipment-l"><img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pcm_01/Icon_WPN_PCM_09.png" alt="" class="equipment-image"></div>
+      <div class="equip-tier">IV</div>
+    </div>
+  {% endfor %}
+  </div>
+
+  <div class="skills-container">
+    <div class="skills-container-title"><span>Skills</span></div>
+  
+    <div class="skills-each-container">
+      <div class="skills-img skill-l"></div>
+      <div class="skills-tier-1"><span>10</span></div>
+    </div>
+  {% for class_id_smi in range(12) %}
+    <div class="skills-each-container">
+      <div class="skills-img skill-l"></div>
+      <div class="skills-tier-all"><span>00</span></div>
+    </div>
+  {% endfor %}
+  </div>
+  
+  <div class="spirits-container">
+    <div class="spirits-container-title">
+        <span>Spirits</span>
+    </div>
+  {% for class_id_smi in range(26) %}
+    <div class="spirits-each-container">
+      <div class="spirits-img"><img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Pet/Pet_Portrait/Icon_Item_Pet_Cat03.png"></div>
+      <div class="spirits-img-frame"></div>
+      <div class="spirits-tier"><span>IV</span></div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+

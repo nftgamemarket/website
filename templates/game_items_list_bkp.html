@@ -1,0 +1,325 @@
+
+<style type="text/css">
+
+:root {
+  /* vertical translation /**/
+  --smavtr: -92px; /* major skills /**/
+  --smivtr: -69px; /* minor skills /**/
+
+  /* horizontal translation /**/
+  --smihtr: -49px; /* minor skill horizontal translation */
+  
+  /* vertical start position for major skills all classes by class numbers /**/
+  --smavpos-1: -3px; /* war /**/
+  --smavpos-2: calc( var(--smavpos-1) + var(--smavtr) ); /* ele /**/
+  --smavpos-3: calc( var(--smavpos-1) + ( var(--smavtr) * 2 ) + -2px ); /* tao /**/
+  --smavpos-4: calc( var(--smavpos-1) + ( var(--smavtr) * 3 ) + -3px ); /* lan /**/
+  --smavpos-5: calc( var(--smavpos-1) + ( var(--smavtr) * 4 ) + -5px ); /* abr /**/
+  --smavpos-6: calc( var(--smavpos-1) + ( var(--smavtr) * 5 ) + -6px ); /* dar /**/
+
+  /* vertical start position for minor skills all classes by class numbers/**/
+  --smivpos-1: -10px; /* war /**/
+  --smivpos-2: calc( var(--smivpos-1) + ( var(--smivtr) * 1 ) ); /* ele /**/
+  --smivpos-3: calc( var(--smivpos-1) + ( var(--smivtr) * 2 ) ); /* tao /**/
+  --smivpos-4: calc( var(--smivpos-1) + ( var(--smivtr) * 3 ) ); /* lan /**/
+  --smivpos-5: calc( var(--smivpos-1) + ( var(--smivtr) * 4 ) ); /* abr /**/
+  --smivpos-6: calc( var(--smivpos-1) + ( var(--smivtr) * 5 ) ); /* dar /**/
+
+  /* horizontal start position for  major skill - all classes /**/
+  --smahpos: -3px; 
+
+  /* horizontal start possition for minor skills by skill numbers /**/
+  --smihpos-1: -69px; 
+  --smihpos-2: calc( var(--smihpos-1) + ( var(--smihtr) * 1 ) + -2px ); 
+  --smihpos-3: calc( var(--smihpos-1) + ( var(--smihtr) * 2 ) + -4px ); 
+  --smihpos-4: calc( var(--smihpos-1) + ( var(--smihtr) * 3 ) + -5px ); 
+  --smihpos-5: calc( var(--smihpos-1) + ( var(--smihtr) * 4 ) + -7px ); 
+  --smihpos-6: calc( var(--smihpos-1) + ( var(--smihtr) * 5 ) + -9px ); 
+  --smihpos-7: calc( var(--smihpos-1) + ( var(--smihtr) * 6 ) + -12px ); 
+  --smihpos-8: calc( var(--smihpos-1) + ( var(--smihtr) * 7 ) + -14px ); 
+  --smihpos-9: calc( var(--smihpos-1) + ( var(--smihtr) * 8 ) + -15px ); 
+  --smihpos-10: calc( var(--smihpos-1) + ( var(--smihtr) * 9 ) + -17px ); 
+  --smihpos-11: calc( var(--smihpos-1) + ( var(--smihtr) * 10 ) + -19px ); 
+  --smihpos-12: calc( var(--smihpos-1) + ( var(--smihtr) * 11 ) + -21px );  
+
+  --color-l: gold;
+  --color-l-dark: goldenrod;
+  --color-e: red;
+  --color-e-dark: darkred;
+}
+  
+.equipment-badge { position: relative; height: 50px; width: 50px; border-radius: 50%; border: 3px solid; }
+.equipment-l { background: conic-gradient( from -135deg at 50% 50%, goldenrod, gold, gold, lightyellow, gold, gold, goldenrod); border-color: goldenrod; }
+.equipment-e { background: conic-gradient( from -140deg at 50% 50%, darkred, darkred, red, lightyellow, red, darkred, darkred); border-color: darkred; }
+.equipment-r { background: conic-gradient( from -135deg at 50% 50%, darkblue, blue,  white, blue, darkblue); border-color: blue; }
+.equipment-uc { background: conic-gradient( from -135deg at 50% 50%, darkgreen, green, white, green, darkgreen); border-color: green; }
+.equipment-enchance { position: absolute; top:-8px; left:70%; color: lightyellow; font-size: 14px; font-weight: bold; text-shadow: 1px 1px 1px #000; }
+
+.equipment-tier { 
+  position: absolute; top:70%; left:-5px; color: lightyellow; font-size: 10px; font-weight: bold; border-radius: 50%; border: 2px solid #9f916c; 
+  background-color: #000; width: 20px; height: 20px; padding-top: 1px; text-shadow: 1px 1px 5px #000; 
+}
+
+.equipment-image { 
+  width: 32px; margin-top: 5px; margin-left: -5px;
+}
+
+.skill-major-tier { 
+  position: absolute; top:85%; left:26%; background-color: #333; color: lightyellow; font-size: 10px; text-align: center;
+  font-weight: bold; border-radius: 20px; width: 35px; height: 25px; padding-top: 2px;
+}
+
+.skill-tier { 
+  position: absolute; top:70%; left:-4px; background-color: #333; color: lightyellow; font-size: 9px; 
+  font-weight: bold; border-radius: 50%; width: 21px; height: 21px; padding-top: 2px;
+}
+
+.skill-l-tier { border: 2px solid var( --color-l-dark ); }
+.skill-e-tier { border: 2px solid var( --color-e ); }
+.skill-r-tier { border: 2px solid #5176AD; }
+.skill-uc-tier { border: 2px solid lightgray; }
+.skill-ma-l-tier { border: 3px solid #fd0; }
+.skill-ma-e-tier { border: 3px solid #ff002e; }
+.skill-ma-n-tier { border: 3px solid rgb(87, 86, 139); }/**/
+
+.skill-badge-base { 
+  display:inline-block; position: relative; border: 2px solid black; border-radius: 50%; 
+  content:""; background: url(/static/sp-skill2.webp) no-repeat; /*margin: 10px; /**/
+}
+
+.skill-badge-major-size { width: 80px; height: 80px; background-size: auto 549px; margin-bottom: 7px; }
+.skill-badge-minors-size { width: 44px; height: 44px; background-size: auto 405px; }
+
+{% for class_id_sma in range(6) %} 
+.skill-ma-{{class_id_sma+1}} { background-position: var(--smahpos) var(--smavpos-{{class_id_sma+1}}) ! important ; } {% endfor %}
+
+{% for class_id_smi in range(6) %}
+  {% for skill_id_smi in range(13) %}
+  
+.skill-{{skill_id_smi+1}}-{{class_id_smi+1}} { background-position: var(--smihpos-{{skill_id_smi+1}}) var(--smivpos-{{class_id_smi+1}}) ! important ; } {% endfor %} {% endfor %}
+
+  
+.sbc-l { border-color: var( --color-l ) ! important; } 
+.sbc-e { border-color: var( --color-e ) ! important; } 
+.sbc-off { border-color: #5176AD; } 
+
+.skill-minors { 
+    display: inline-block; width: 300px;
+}
+
+.spirit-badge-base {
+  display: flex; position: relative; bottom: 0; left: 0; justify-content: center; align-items: center; 
+  width: 55px; height: 55px; border-radius: 50% ! important; 
+}
+
+.spirit-l { background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-legendary.webp) 0 0/cover no-repeat; }
+.spirit-e { background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-epic.webp) 0 0/cover no-repeat; }
+.spirit-r { background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-rare.webp) 0 0/cover no-repeat; }
+.spirit-uc { background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-uncommon.webp) 0 0/cover no-repeat; }
+  
+.spirit-tier {
+  position: absolute; top:70%; left:-8px; background-color: #333; color: lightyellow; font-size: 12px; font-weight: bold; 
+  border-radius: 50%; border: 2px solid #9f916c; width: 24px; height: 24px; padding-top: 1px;
+}
+
+                                                                                                                                                         
+/*url(https://file.mir4global.com/xdraco/img/common/card/sp-card.webp) 0 0/cover no-repeat;*/
+.card_base {
+  position: relative;
+  min-width: 200px ! important;
+  max-width: 200px ! important;
+  min-height: 300px ! important;
+  max-height: 300px ! important;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 3px;
+  
+} 
+
+.card_bg_l { 
+  border-color: darkgoldenrod;
+  background: conic-gradient(from 10deg, lightyellow, darkgoldenrod, gold, darkgoldenrod, gold,  goldenrod, gold, goldenrod, white,  goldenrod,gold, goldenrod, gold, darkgoldenrod, gold, darkgoldenrod,  lightyellow);
+}
+.card_bg_e {
+  border-color: darkred;
+  background: conic-gradient(from 10deg, lightcoral, darkred, #c4492d, darkred, #c4492d,  red, #c4492d, red, white,  red, #c4492d, red, #c4492d, darkred, #c4492d, darkred,  lightcoral);
+}
+.card_bg_r {
+  border-color: darkblue;
+  background: conic-gradient(from 10deg, lightblue, darkblue, #2a94c4, darkblue, #2a94c4,  blue, #2a94c4, blue, white,  blue, #2a94c4, blue, #2a94c4, darkblue, #2a94c4, darkblue,  lightblue);
+}
+.card_bg_uc {
+  border-color: darkgreen;
+  background: conic-gradient(from 10deg, lightgreen, darkgreen, #3d9d56, darkgreen, #3d9d56,  green, #3d9d56, green, white,  green, #3d9d56, green, #3d9d56, darkgreen, #3d9d56, darkgreen,  lightgreen);
+}
+
+/*darkgreen, green, white, green, darkgreen*/
+                                                                                                                                                         
+/*darkred, darkred, red, lightyellow, red, darkred, darkred*/
+                                                                                                                                                         
+.card_class_icon {
+   width: 40px;
+   height: 40px;
+   background: url(https://file.mir4global.com/xdraco/img/common/card/sp-class.webp) 0 0/cover no-repeat;
+   border-radius: 50%;
+   position: absolute; 
+   top: 0px; left: 0px;
+ }                                                                                                                                                        
+
+.card_class_icon-1 { background-position: -0px -0px;  }
+                                                                                                                                                         
+.nft_lvl { 
+  position: absolute; 
+  top: 0px; right: 0px; 
+  with: 30px; height:30px; 
+  font-weight: bolder; 
+  text-shadow: -1px 1px 2px #000;
+  color: lightgoldenrodyellow;
+}                                                                                                                                                       
+
+.card_class_img {
+  position: relative;
+  z-index: 2;
+  left: 10%;
+  top: 15%;
+  width: 150px;
+}  
+                                                                                                                                                         
+.card_bottom {
+  z-index: 1;
+  position: absolute;
+  top: 45%;
+  left: 0%;
+  width: 100%;
+  height: 55%;
+  background-color: #FFF; 
+  color: #000;
+  border-radius: 0 0 8px 8px;
+}
+
+.card_bottom_bg_l { background: linear-gradient(goldenrod 1%, #e7dfce 10%, #fcfaf8, #fcfaf8); }
+.card_bottom_bg_e { background: linear-gradient(darkred 1%, #e6d3cd 10%, #fcfaf8, #fcfaf8); }
+.card_bottom_bg_r { background: linear-gradient(blue 1%, #2a94c4 10%, #fcfaf8, #fcfaf8); }
+.card_bottom_bg_uc { background: linear-gradient(darkgreen 1%, #3d9d56 10%, #fcfaf8, #fcfaf8, #fcfaf8); }
+                                                                                                                                                       
+                                                                                                                                                         
+.nft_power {
+  position: absolute; 
+   top: 35%;
+   left: 0px; 
+   text-align: center;
+   font-weight: bolder; 
+   text-shadow: -1px 1px 1px #333;
+   color: #111;
+   margin-left:5px;
+   padding-left: 15px;
+   border: 1px solid red;
+   background: url(https://file.mir4global.com/xdraco/img/common/card/icon-power.webp) 0 0/cover no-repeat;
+   background-size: 20px 20px;
+}
+                                                                                                                                                         
+.nft_price {
+  position: absolute; 
+   top: 35%;
+   right: 0px;
+   margin-right: 5px;
+   text-align: center;
+   font-weight: bolder; 
+   text-shadow: -1px 1px 1px #333;
+   color: #111;
+   border: 1px solid red;
+}
+                                                                                                                                                         
+.card_nft_name {
+  position: relative; 
+  width: 95%;
+  top: 75%;
+  left: 0px;
+  margin-left: 5px;
+  font-weight: bold; 
+  text-shadow: -1px 1px 1px #111;
+  color: #111;
+  /*border: 1px solid red;**/
+  text-align: center ! important;
+}
+
+/*.card_inner_border {
+   position: ; absolute;
+   top: 1%; 
+   left: 3%;
+   margin: 3%;
+   width: 98%;
+   height: 200px;
+   border: 2px solid #000;
+   background-color: red;
+   z-index: 10 ! important;
+}*/
+</style>
+
+
+<div class="container-fluid">
+  <div class="row my-5">
+    <div class="col mx-auto col-3 text-center text-white fw-bold bg-secondary">
+      <p>list of NFTs on sale</p>
+    </div>
+  </div>
+  <div class="container-fluid mx-0 px-0">
+  {% for char_class_id in range(6) %}
+    <div class="row my-3">
+      
+      <div class="col me-2 card_base card_bg_e">
+          
+          <div class="card_class_icon card_class_icon-1 m-2"></div>
+          <span class="nft_lvl m-2 text-center px-2">Level 132</span>
+          <img class="card_class_img" src="https://file.mir4global.com/xdraco-thumb/card-nft/arbalist-grade5.webp">
+          <div class="card_bottom card_bottom_bg_e text-center">
+            <span class="nft_power">Power</span>
+            <span class="nft_price">Price</span>
+            <span class="card_nft_name">Nome Muito Longo</span>
+
+          </div>
+        <div class="card_inner_border"></div>
+      </div>
+      
+      <div class="col-10">
+        <div class="row mb-2">
+          {% for equi in range(15) %}
+          <div class="m-1 me-2 text-white text-center bg-dark equipment-badge equipment-l">
+            <span id="item-enchance" class="text-center equipment-enchance">+12</span>
+            <span id="equipment-tier" class="text-center equipment-tier">IV</span>
+            <img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pcm_01/Icon_WPN_PCM_09.png" alt="" class="equipment-image">
+          </div>
+          {% endfor %}
+        </div>
+        
+        <div class="row mb-2">
+          <!--h2 class="col" style="width: 140px;">SKILLs</h2-->
+          <div class="container">
+              <div class="skill-badge-base skill-badge-major-size skill-ma-{{ char_class_id+1 }} sbc-l">
+                <span id="skill-major-tier" class="skill-major-tier skill-ma-l-tier">11</span>
+              </div>
+              <div class="skill-minors">    
+                {% for skill_num in range(12) %}
+                <div class="skill-badge-base skill-badge-minors-size skill-{{ skill_num+1 }}-{{ char_class_id+1 }} {% if skill_num % 3 == 0 %} sbc-l {% else %} sbc-e {% endif %}">
+                  <span id="skill-tier" class="text-center skill-tier skill-l-tier">11</span>
+                </div>
+                {% endfor %}
+              </div>
+            
+          </div>  
+        </div>
+        
+        <div class="row mb-2 align-self-start">
+          <!--h2 class="col align-self-start" style="width: 140px;">SPIRITS</h2-->
+          {% for spirit in range(20) %}
+           <div class="m-1 me-2 text-center bg-dark spirit-badge-base spirit-e" >
+              <span id="spirit-tier" class="text-center text-white spirit-tier">IV</span>
+              <img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Pet/Pet_Portrait/Icon_Item_Pet_IceGolem01.png" width="40" alt="">
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,66 @@
+:root {
+  --clr-dark: black;
+  --clr-light: #f1f5f9;
+  --clr-accent: #e11d48;
+
+  --clr-l-1: darkgoldenrod;
+  --clr-l-2: goldenrod;
+  --clr-l-3: gold;
+  --clr-l-4: #fae384;
+  --clr-l-5: white;
+
+  --clr-e-1: darkred;
+  --clr-e-2: firebrick;
+  --clr-e-3: red;
+  --clr-e-4: #fdc4a8;
+  --clr-e-5: white;
+
+  --clr-r-1: #1d527e;
+  --clr-r-2: blue;
+  --clr-r-3: #288ec3;
+  --clr-r-4: lightblue;
+  --clr-r-5: white;
+
+  --clr-u-1: darkgreen;
+  --clr-u-2: green;
+  --clr-u-3: #3d9d56;
+  --clr-u-4: lightgreen;
+  --clr-u-5: white;
+
+  --tier-border-clr: #9f916c;
+
+  --spirit-each-size: 45px;
+  
+  --tiers-size: 20px;
+    
+  --skill-tier-size: var(--tiers-size);
+  --items-tier-size: var(--tiers-size);
+  --spirit-tier-size: var(--tiers-size);
+
+}
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 20px;
+    padding: 0;
+    /* line-height: 1.6; */
+    /* word-spacing: 1.4px; */
+    font-family: 'Roboto', sans-serif;
+    color: var(--clr-dark);
+    background-color: black;
+  }
+  
+  /* .container { /* desnecesspario */
+    /* margin: 0;
+    /*border: 1px dashed var(--clr-dark); 
+  } /**/
+  
+  .item { /* desnecessário */
+    color: var(--clr-light);
+  }
+
