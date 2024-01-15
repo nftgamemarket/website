@@ -7,6 +7,17 @@
     <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='css/style.css') }}" />
     <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='css/style2.css') }}" />
 
+    <style type="text/css">
+      
+    {% for class_id_sma in range(6) %} 
+    .skill-ma-{{class_id_sma+1}} { background-position: var(--smahpos) var(--smavpos-{{class_id_sma+1}}) ! important ; } {% endfor %}
+
+    {% for class_id_smi in range(6) %}
+      {% for skill_id_smi in range(13) %}
+    .skill-{{skill_id_smi+1}}-{{class_id_smi+1}} { background-position: var(--smihpos-{{skill_id_smi+1}}) var(--smivpos-{{class_id_smi+1}}) ! important ; } {% endfor %} {% endfor %}
+    
+  </style>
+    
   </head>
   
   <body class="bg-black">

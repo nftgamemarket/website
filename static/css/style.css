@@ -37,6 +37,46 @@
   --items-tier-size: var(--tiers-size);
   --spirit-tier-size: var(--tiers-size);
 
+  /* vertical translation /**/
+  --smavtr: -92px; /* major skills /**/
+  --smivtr: -69px; /* minor skills /**/
+
+  /* horizontal translation /**/
+  --smihtr: -49px; /* minor skill horizontal translation */
+
+  /* vertical start position for major skills all classes by class numbers /**/
+  --smavpos-1: -3px; /* war /**/
+  --smavpos-2: calc( var(--smavpos-1) + var(--smavtr) ); /* ele /**/
+  --smavpos-3: calc( var(--smavpos-1) + ( var(--smavtr) * 2 ) + -2px ); /* tao /**/
+  --smavpos-4: calc( var(--smavpos-1) + ( var(--smavtr) * 3 ) + -3px ); /* lan /**/
+  --smavpos-5: calc( var(--smavpos-1) + ( var(--smavtr) * 4 ) + -5px ); /* abr /**/
+  --smavpos-6: calc( var(--smavpos-1) + ( var(--smavtr) * 5 ) + -6px ); /* dar /**/
+
+  /* vertical start position for minor skills all classes by class numbers/**/
+  --smivpos-1: -10px; /* war /**/
+  --smivpos-2: calc( var(--smivpos-1) + ( var(--smivtr) * 1 ) ); /* ele /**/
+  --smivpos-3: calc( var(--smivpos-1) + ( var(--smivtr) * 2 ) ); /* tao /**/
+  --smivpos-4: calc( var(--smivpos-1) + ( var(--smivtr) * 3 ) ); /* lan /**/
+  --smivpos-5: calc( var(--smivpos-1) + ( var(--smivtr) * 4 ) ); /* abr /**/
+  --smivpos-6: calc( var(--smivpos-1) + ( var(--smivtr) * 5 ) ); /* dar /**/
+
+  /* horizontal start position for  major skill - all classes /**/
+  --smahpos: -3px; 
+
+  /* horizontal start possition for minor skills by skill numbers /**/
+  --smihpos-1: -69px; 
+  --smihpos-2: calc( var(--smihpos-1) + ( var(--smihtr) * 1 ) + -2px ); 
+  --smihpos-3: calc( var(--smihpos-1) + ( var(--smihtr) * 2 ) + -4px ); 
+  --smihpos-4: calc( var(--smihpos-1) + ( var(--smihtr) * 3 ) + -5px ); 
+  --smihpos-5: calc( var(--smihpos-1) + ( var(--smihtr) * 4 ) + -7px ); 
+  --smihpos-6: calc( var(--smihpos-1) + ( var(--smihtr) * 5 ) + -9px ); 
+  --smihpos-7: calc( var(--smihpos-1) + ( var(--smihtr) * 6 ) + -12px ); 
+  --smihpos-8: calc( var(--smihpos-1) + ( var(--smihtr) * 7 ) + -14px ); 
+  --smihpos-9: calc( var(--smihpos-1) + ( var(--smihtr) * 8 ) + -15px ); 
+  --smihpos-10: calc( var(--smihpos-1) + ( var(--smihtr) * 9 ) + -17px ); 
+  --smihpos-11: calc( var(--smihpos-1) + ( var(--smihtr) * 10 ) + -19px ); 
+  --smihpos-12: calc( var(--smihpos-1) + ( var(--smihtr) * 11 ) + -21px ); 
+
 }
   
   *,

@@ -250,7 +250,8 @@
 
 }
 
-.detail-each-container {
+.detail-each-container,
+.detail-skill-container {
     display: grid;
     --_detail-each-container-size: 30px;
     height: var(--_detail-each-container-size);
@@ -262,6 +263,7 @@
     /* background-color: blue; */
     /* align-self: center; */
 }
+
 
 .detail-enlarger {
     position: relative;
@@ -379,6 +381,8 @@
     background-size: 516px;
 }
 
+
+
 .skills-tier-1{
     display: flex;
     justify-content: center;
@@ -402,6 +406,15 @@
     color: #FFF;
     z-index: 4;
 }
+
+{% for class_id_sma in range(6) %} 
+.skill-ma-{{class_id_sma+1}} { background-position: var(--smahpos) var(--smavpos-{{class_id_sma+1}}) ! important ; } {% endfor %}
+
+{% for class_id_smi in range(6) %}
+  {% for skill_id_smi in range(13) %}
+
+.skill-{{skill_id_smi+1}}-{{class_id_smi+1}} { background-position: var(--smihpos-{{skill_id_smi+1}}) var(--smivpos-{{class_id_smi+1}}) ! important ; } {% endfor %} {% endfor %}
+
 
 /* ----- spirits ----------- */
 

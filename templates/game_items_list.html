@@ -59,15 +59,15 @@
     <div class="detail-type-container"> -->
       <div class="detail-type-title"><span>Skills</span></div>
       <div class="detail-enlarger">
-        <div class="detail-each-container">
-          <div class="skills-img skill-l"></div>
+        <div class="detail-skill-container">
+          <div class="skills-img skill-ma-1 skill-l"></div>
           <div class="skills-tier-1"><span>10</span></div>
         </div>
       </div>
     {% for class_id_smi in range(12) %}
       <div class="detail-enlarger">
-      <div class="detail-each-container">
-        <div class="skills-img skill-l"></div>
+      <div class="detail-skill-container">
+        <div class="skills-img skill-{{ class_id_smi }}-1 skill-l"></div>
         <div class="detail-tier"><span>00</span></div>
       </div>
       </div>
@@ -78,54 +78,56 @@
       <div class="detail-type-title">
           <span>Spirits</span>
       </div>
-    {% for class_id_smi in range(23) %}
-      <div class="detail-each-container">
-        <div class="spirits-img-frame spirit-frame-l"><img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Pet/Pet_Portrait/Icon_Item_Pet_Cat03.png" alt="nome do bicho"></div>
-        <!-- <div class="spirits-img"></div> -->
-        <div class="detail-tier"><span>IV</span></div>
+    {# for class_id_smi in range(23) #}
+      <div class="detail-enlarger">
+        <div class="detail-each-container">
+          <div class="spirits-img-frame spirit-frame-l"><img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Pet/Pet_Portrait/Icon_Item_Pet_Cat03.png" alt="nome do bicho"></div>
+          <!-- <div class="spirits-img"></div> -->
+          <div class="detail-tier"><span>IV</span></div>
+        </div>
       </div>
-    {% endfor %}
+    {# endfor #}
     <!-- </div>
     
     <div class="detail-type-container"> -->
       <div class="detail-type-title">
           <span>Orbs</span>
       </div>
-      {% for class_id_smi in range(23) %}
+      {# for class_id_smi in range(23) #}
       <div class="detail-each-container">
         <div class="spirits-img-frame spirit-frame-l"></div>
         <div class="spirits-img"><img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Pet/MagicOrb_Item/Icon_Item_MagicOrb_Pet_bat02.png" alt="nome do bicho"></div>
         <div class="detail-tier"><span>IV</span></div>
       </div>
-      {% endfor %}
+      {# endfor #}
     <!-- </div>
   
     <div class="detail-type-container"> -->
       <div class="detail-type-title">
           <span>Stones</span>
       </div>
-      {% for class_id_smi in range(23) %}
+      {# for class_id_smi in range(23) #}
       <div class="detail-each-container">
         <div class="detail-enhance">+12</div>
         <div class="spirits-img-frame spirit-frame-l"></div>
         <div class="spirits-img"><img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Meterial_01/Item_Jewel_Red_005.png" alt="nome do bicho"></div>
         <div class="detail-tier"><span>IV</span></div>
       </div>
-      {% endfor %}    
+      {# endfor #}    
     <!-- </div>
   
     <div class="detail-type-container"> -->
       <div class="detail-type-title">
           <span>Mystical</span>
       </div>
-      {% for class_id_smi in range(23) %}
+      {# for class_id_smi in range(23) #}
       <div class="detail-each-container">
         <div class="detail-enhance">+12</div>
         <div class="spirits-img-frame spirit-frame-r"></div>
         <div class="spirits-img"><img src="https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Item_MysticalPiece_01/Item_MysticalPiece_Horse03.png" alt="Mystical Pieces XXX"></div>
         <div class="detail-tier"><span>IV</span></div>
       </div>
-      {% endfor %}    
+      {# endfor #}    
     </div>
   
   </div>

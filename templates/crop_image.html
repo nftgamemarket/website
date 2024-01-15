@@ -65,14 +65,84 @@
       <div class="skill-badge-base skill-badge-minors-size skill-7 sbc-e"></div>
       <div class="skill-badge-base skill-badge-minors-size skill-8 sbc-e"></div>
       <div class="skill-badge-base skill-badge-minors-size skill-9 sbc-e"></div>
-      <div class="skill-badge-base skill-badge-minors-size skill-10 sbc-e"></div>
-      <div class="skill-badge-base skill-badge-minors-size skill-11 sbc-e"></div>
-      <div class="skill-badge-base skill-badge-minors-size skill-12 sbc-e"></div>
-      <div class="skill-badge-base skill-badge-minors-size skill-13"></div>
+      <div class="skill-badge-base skill-badge-minors-size skill-10 sbc-off"></div>
+      <div class="skill-badge-base skill-badge-minors-size skill-11 sbc-off"></div>
+      <div class="skill-badge-base skill-badge-minors-size skill-12 sbc-off"></div>
+      <div class="skill-badge-base skill-badge-minors-size skill-13 sbc-e"></div>
     </div>
     </div>    
 </div>  
-   
-  </body>
+
+<style type="text/css">
+
+:root{
+  --major-side-size: 153px;
+  --minor-side-size: 106px;
+}
+
+.img-frame {
+  /* display: flex;
+  position: relative; */
+}
+  
+.img-major-frame {
+  width: var(--major-side-size);
+  height: var(--major-side-size);
+  outline: 2px solid red;
+  transform: scale(0.5);
+  background-color: #444;
+  /* transition: all .1s;  */
+}
+
+.img-minor-frame {
+  width: var(--minor-side-size);
+  height: var(--minor-side-size);
+  outline: 2px solid green;
+  transform: scale(0.5);
+  background-color: #AAA;
+}
+
+.img-major-frame:hover,
+.img-minor-frame:hover { 
+  transform: scale(1);
+  z-index: 90;
+}
+  
+.img-base {
+  object-fit: none;
+  /* outline: 2px solid #FFF;  */
+  border-radius: 50%;  
+  width: 100%;
+  height: 100%;
+}
+
+.img-major {
+  width: 100%;
+  height: 100%;
+}
+
+.img-minor {
+  width: 100%;
+  height: 100%;
+}
+  
+.img-skill-1 { object-position: -4px -4px; }
+.img-skill-2 { object-position: -186px -28px; }
+.img-skill-3 { object-position: -323px -28px; }
+.img-skill-4 { object-position: -460px -28px; }
+.img-skill-5 { object-position: -593px -28px; }
+
+
+</style>
+
+    <div class="img-major-frame img-frame"><img class="img-base img-major img-skill-1" src="/static/sp-skill2.webp"></div>
+    <div class="img-minor-frame img-frame"><img class="img-base img-minor img-skill-2" src="/static/sp-skill2.webp"></div>
+    <div class="img-minor-frame img-frame"><img class="img-base img-minor img-skill-3" src="/static/sp-skill2.webp"></div>
+    <div class="img-minor-frame img-frame"><img class="img-base img-minor img-skill-4" src="/static/sp-skill2.webp"></div>
+    <div class="img-minor-frame img-frame"><img class="img-base img-minor img-skill-5" src="/static/sp-skill2.webp"></div>
+    
+    <img src="/static/sp-skill2.webp">
+
+    </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
