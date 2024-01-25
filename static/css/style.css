@@ -29,53 +29,44 @@
 
   --tier-border-clr: #9f916c;
 
-  --spirit-each-size: 45px;
-  
-  --tiers-size: 20px;
-    
-  --skill-tier-size: var(--tiers-size);
-  --items-tier-size: var(--tiers-size);
-  --spirit-tier-size: var(--tiers-size);
+  --gear-size: 30px;
+  --spirit-size: 35px;
+  --dragonItem-size: 40px;
+  --skill-major-size: 40px;
+  --skill-minor-size: 28px;
+  --skill-minor-hor-trans: -36px;
+  --skill-major-left: -1px;
 
-  /* vertical translation /**/
-  --smavtr: -92px; /* major skills /**/
-  --smivtr: -69px; /* minor skills /**/
 
-  /* horizontal translation /**/
-  --smihtr: -49px; /* minor skill horizontal translation */
+  /*number defines the class*/
+  --skill-major-top-1: -1px;
+  --skill-major-top-2: -49px;
+  --skill-major-top-3: -97px;
+  --skill-major-top-4: -145px;
+  --skill-major-top-5: -193px;
+  --skill-major-top-6: -242px;
 
-  /* vertical start position for major skills all classes by class numbers /**/
-  --smavpos-1: -3px; /* war /**/
-  --smavpos-2: calc( var(--smavpos-1) + var(--smavtr) ); /* ele /**/
-  --smavpos-3: calc( var(--smavpos-1) + ( var(--smavtr) * 2 ) + -2px ); /* tao /**/
-  --smavpos-4: calc( var(--smavpos-1) + ( var(--smavtr) * 3 ) + -3px ); /* lan /**/
-  --smavpos-5: calc( var(--smavpos-1) + ( var(--smavtr) * 4 ) + -5px ); /* abr /**/
-  --smavpos-6: calc( var(--smavpos-1) + ( var(--smavtr) * 5 ) + -6px ); /* dar /**/
+  /*number defines the class*/
+  --skill-minor-top-1: -7px;
+  --skill-minor-top-2: -55px;
+  --skill-minor-top-3: -103px;
+  --skill-minor-top-4: -151px;
+  --skill-minor-top-5: -200px;
+  --skill-minor-top-6: -248px;
 
-  /* vertical start position for minor skills all classes by class numbers/**/
-  --smivpos-1: -10px; /* war /**/
-  --smivpos-2: calc( var(--smivpos-1) + ( var(--smivtr) * 1 ) ); /* ele /**/
-  --smivpos-3: calc( var(--smivpos-1) + ( var(--smivtr) * 2 ) ); /* tao /**/
-  --smivpos-4: calc( var(--smivpos-1) + ( var(--smivtr) * 3 ) ); /* lan /**/
-  --smivpos-5: calc( var(--smivpos-1) + ( var(--smivtr) * 4 ) ); /* abr /**/
-  --smivpos-6: calc( var(--smivpos-1) + ( var(--smivtr) * 5 ) ); /* dar /**/
-
-  /* horizontal start position for  major skill - all classes /**/
-  --smahpos: -3px; 
-
-  /* horizontal start possition for minor skills by skill numbers /**/
-  --smihpos-1: -69px; 
-  --smihpos-2: calc( var(--smihpos-1) + ( var(--smihtr) * 1 ) + -2px ); 
-  --smihpos-3: calc( var(--smihpos-1) + ( var(--smihtr) * 2 ) + -4px ); 
-  --smihpos-4: calc( var(--smihpos-1) + ( var(--smihtr) * 3 ) + -5px ); 
-  --smihpos-5: calc( var(--smihpos-1) + ( var(--smihtr) * 4 ) + -7px ); 
-  --smihpos-6: calc( var(--smihpos-1) + ( var(--smihtr) * 5 ) + -9px ); 
-  --smihpos-7: calc( var(--smihpos-1) + ( var(--smihtr) * 6 ) + -12px ); 
-  --smihpos-8: calc( var(--smihpos-1) + ( var(--smihtr) * 7 ) + -14px ); 
-  --smihpos-9: calc( var(--smihpos-1) + ( var(--smihtr) * 8 ) + -15px ); 
-  --smihpos-10: calc( var(--smihpos-1) + ( var(--smihtr) * 9 ) + -17px ); 
-  --smihpos-11: calc( var(--smihpos-1) + ( var(--smihtr) * 10 ) + -19px ); 
-  --smihpos-12: calc( var(--smihpos-1) + ( var(--smihtr) * 11 ) + -21px ); 
+  /*number defines the horizontal image skill*/
+  --skill-minor-left-2: -49px;
+  --skill-minor-left-3: calc( var(--skill-minor-left-2) + var(--skill-minor-hor-trans) );
+  --skill-minor-left-4: calc( var(--skill-minor-left-2)  + var(--skill-minor-hor-trans) * 2 + 1px );
+  --skill-minor-left-5: calc( var(--skill-minor-left-2)  + var(--skill-minor-hor-trans) * 3 + 2px );
+  --skill-minor-left-6: calc( var(--skill-minor-left-2)  + var(--skill-minor-hor-trans) * 4 + 2px );
+  --skill-minor-left-7: calc( var(--skill-minor-left-2)  + var(--skill-minor-hor-trans) * 5 + 2px );
+  --skill-minor-left-8: calc( var(--skill-minor-left-2)  + var(--skill-minor-hor-trans) * 6 + 3px );
+  --skill-minor-left-9: calc( var(--skill-minor-left-2)  + var(--skill-minor-hor-trans) * 7 + 3px );
+  --skill-minor-left-10: calc( var(--skill-minor-left-2)  + var(--skill-minor-hor-trans) * 8 + 3px );
+  --skill-minor-left-11: calc( var(--skill-minor-left-2)  + var(--skill-minor-hor-trans) * 9 + 4px );
+  --skill-minor-left-12: calc( var(--skill-minor-left-2)  + var(--skill-minor-hor-trans) * 10 + 4px );
+  --skill-minor-left-13: calc( var(--skill-minor-left-2)  + var(--skill-minor-hor-trans) * 11 + 5px );
 
 }
   

@@ -214,26 +214,32 @@
     /* outline: 2px solid violet; */
 }
 
-/* detail-types */
-.detail-type-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: start;
-    /* border: 2px solid red; */
-    /* background-color: purple; */
-    gap:8px 5px ;
+.flex-container {
+      margin: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
 }
 
-.detail-type-title { 
-    display:  flex;
-    justify-content: center;
-    align-items: center;
+.each-item {
+    position: relative;
+    margin: 2px;
+    border-radius: 50%; 
+    transition: all 50ms;
+    background-repeat: no-repeat;
 }
 
-.detail-type-title span { 
-    --_angle_rotation: -20deg;
+.each-item:hover {
+    transform: scale(2);
+    z-index: 10;
+}
+/* -------------------------------------- */
+
+.each-item span.type-title{
+    --_angle_rotation: -0deg;
     display: flex;
-    width: 70px;
+    /* width: 60px; */
+    height: 25px;
     justify-content: center;
     align-items: center;
     justify-items: center;
@@ -247,254 +253,494 @@
     border: 2px solid white;    
     padding: 2px 4px;
     border-radius: 12px;
-
+    font-family: 'Roboto' ,sans-serif;
+    font-size: 12px;
 }
 
-.detail-each-container,
-.detail-skill-container {
-    display: grid;
-    --_detail-each-container-size: 30px;
-    height: var(--_detail-each-container-size);
-    width: var(--_detail-each-container-size);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    /* outline: 2px solid red;*/
-    color: white;
-    /* background-color: blue; */
-    /* align-self: center; */
+.spirit-frame,
+.orb-frame,
+.dragonItem-frame,
+.magicStone-frame,
+.mysticalPiece-frame,
+.et-frame
+{
+    --_side-size: var(--spirit-size);
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
+    background-repeat: no-repeat !important;
+    background-size: var(--_side-size) !important;
+    background-color: rgba(0,0,0, 0.7) !important;
+    border-radius: 50%;
 }
 
+.training-frame,
+.conquest-frame {
+    --_side-size: 55px;
+    height: var(--_side-size) !important;
+    /* width: var(--_side-size) !important;  */
+    background-repeat: no-repeat !important;   
+    /* background-color: rgba(100,100,100, 0.7) !important; */
+    /* border: 1px solid red; */
+    margin-left: 3px;
+} 
 
-.detail-enlarger {
+.mystique-frame {
+    --_side-size: 40px;
+    height: var(--_side-size) !important;
+    background-repeat: no-repeat !important;   
+    /* background-image: url(https://file.mir4global.com/xdraco/img/common/nft-detail/img-relic-01.webp); */
+    background-size: 30px;
+    background-position: 0px 5px;
+    border-radius: 50px;
+    margin-left: 3px;
+}
+
+.training-img,
+.conquest-img,
+.mystique-img {
     position: relative;
-}
-
-.detail-each-container:hover {
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    z-index: 90;
-    transform: scale(1.5);
-    display: grid;
-    --_detail-each-container-size: 50px;
-    height: var(--_detail-each-container-size);
-    width: var(--_detail-each-container-size);
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    outline: 15px solid rgba(50, 50, 50, 0.50);
-    border-radius: 50%;
-    color: white;
-    /* background-color: blue; */
-    /* align-self: center; */
-}
-
-.detail-enhance{
-    display: flex;
+    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
-    grid-area: 1 / 3/ 2 / 4;
-    z-index: 2;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.training-img::before,
+.conquest-img::before,
+.mystique-img::before {
+    content: attr(title-name);
+    display: flex;
+    justify-content: left;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    width: 40px;
+    /* height: 20px; */
+    margin-bottom: 1px;
+    text-wrap: nowrap;
+    white-space: nowrap;
+    text-overflow: clip ;
+
     font-size: 10px;
-    text-shadow: -1px 1px 1px #111;
-    /* outline: 1px solid black; */
-    margin: -2px -2px 0 0;
-    font-weight: bold;
-}
-
-.detail-tier{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: 3 / 1 / 4 / 2;
-    z-index: 2;
-    /* border-radius: 50%;
-    background-color: black;
-    font-size: 10px;
-    margin: 0 0 -1px -1x;
-    border: 2px solid var(--tier-border-clr);
-    font-weight: bold; */
-}
-
-.detail-tier span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--tiers-size);
-    height: var(--tiers-size);
-    border: 2px solid rgb(150, 140, 120);
-    border-radius: 50%;
-    background-color: rgb(60, 50, 50);
-    font-size: 11px;
     font-weight: 500;
-    margin-left: -5px;
-    margin-bottom: -7px; 
-    left: -5px; 
-    color: white;
-    text-align: center;
+    color: #FFF;
+    /* background-color: RED !important; */
+    /* border: 1px solid green; */
+    /* transform: rotate(-20deg);  */
 }
 
-/*-------equipemtn styles ---------------*/
-.equip-img{
+.training-lvl,
+.conquest-lvl {
+    --_size: 36px;
+    display: flex;
+    height: var(--_size);
+    justify-content: center;
+    align-items: center;
+    background-size: calc(var(--_size)) !important;
+    background-image: url(/static/img/bg-training-default.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: 'Roboto' ,sans-serif;
+    /* background-color: violet; */
+    /* opacity:  0.25  ; */
+}
+
+.mystique-lvl {
+    --_size: 36px;
+    display: flex;
+    height: var(--_size);
+    justify-content: center;
+    align-items: center;
+    background-size: calc(var(--_size)) !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: 'Roboto' ,sans-serif;
+    /* background-color: violet; */
+    /* opacity:  0.25  ; */
+    text-shadow: -1px 1px 1px black;
+}
+
+
+.spirit-bg-5, .orb-bg-5, .magicStone-bg-5, .mysticalPiece-bg-5, .et-bg-5 { background: url(/static/img/img-spirit-bg-legendary.webp); }
+.spirit-bg-4, .orb-bg-4, .magicStone-bg-4, .mysticalPiece-bg-4, .et-bg-4 { background: url(/static/img/img-spirit-bg-epic.webp); }
+.spirit-bg-3, .orb-bg-3, .magicStone-bg-3, .mysticalPiece-bg-3 { background: url(/static/img/img-spirit-bg-rare.webp); }
+.spirit-bg-2, .orb-bg-2, .magicStone-bg-2, .mysticalPiece-bg-2 { background: url(/static/img/img-spirit-bg-uncommon.webp); }
+
+.dragonItem-bg-5 { background: url(/static/img/img-dragon-item-legendary.ab2bb7e.webp); }
+.dragonItem-bg-4 { background: url(/static/img/img-dragon-item-epic.0082db6.webp); }
+.dragonItem-bg-3 { background: url(/static/img/img-dragon-item-rare.3f14c81.webp); }
+
+.spirit-img {
+    font-family: sans-serif;
+    --_side-size: var(--spirit-size);
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
+    background-size: calc( var(--spirit-size) - 12px );
+    background-repeat: no-repeat;
+    background-position: 35% 40%;
+    position: relative; 
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+
+.orb-img {
+    font-family: sans-serif;
+    --_side-size: 35px;
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
+    background-size: calc( var(--spirit-size) - 12px );
+    background-repeat: no-repeat;
+    background-position: 6px 6px;
+    position: relative; 
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+
+.dragonItem-img {
+    font-family: sans-serif;
+    --_side-size: var(--spirit-size);
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
+    background-size: calc( var(--spirit-size) - 16px );
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative; 
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+
+.magicStone-img {
+    font-family: sans-serif;
+    --_side-size: 35px;
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
+    background-size: calc( var(--spirit-size) - 10px );
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    position: relative; 
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+
+.mysticalPiece-img {
+    font-family: sans-serif;
+    --_side-size: var(--spirit-size);
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
+    background-size: calc( var(--spirit-size) - 12px );
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative; 
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+
+.et-img {
+    font-family: sans-serif;
+    --_side-size: var(--spirit-size);
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
+    background-size: calc( var(--spirit-size) - 15px );
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative; 
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+
+.gear-frame {
     --_clr-1: var(--clr-1);
     --_clr-2: var(--clr-2);
     --_clr-3: var(--clr-3);
     --_clr-4: var(--clr-4);
     --_clr-5: var(--clr-5);
-
-    display: flex;
-    grid-area: 1 / 1 / 4 / 4;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
+    --_side-size: var(--gear-size);
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
     background: conic-gradient(from 180deg, var(--_clr-1), var(--_clr-2), var(--_clr-3), var(--_clr-3), var(--_clr-4), var(--_clr-3), var(--_clr-1), var(--_clr-3), var(--_clr-1), var(--_clr-2),var(--_clr-1)); 
-    border-image: linear-gradient(var(--_clr-1), var(--_clr-3) ) 2;
+    border-radius: 50%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--clr-2);
+    box-sizing: border-box;
+}
+
+.gear-bg-5 { --clr-1: var(--clr-l-1); --clr-2: var(--clr-l-2); --clr-3: var(--clr-l-3); --clr-4: var(--clr-l-4); --clr-5: var(--clr-l-5); }
+.gear-bg-4 { --clr-1: var(--clr-e-1); --clr-2: var(--clr-e-2); --clr-3: var(--clr-e-3); --clr-4: var(--clr-e-4); --clr-5: var(--clr-e-5); }
+.gear-bg-3 { --clr-1: var(--clr-r-1); --clr-2: var(--clr-r-2); --clr-3: var(--clr-r-3); --clr-4: var(--clr-r-4); --clr-5: var(--clr-r-5); }
+.gear-bg-2 { --clr-1: var(--clr-u-1); --clr-2: var(--clr-u-2); --clr-3: var(--clr-u-3); --clr-4: var(--clr-u-4); --clr-5: var(--clr-u-5); }
+
+.gear-img {
+    font-family: sans-serif;
+    --_side-size: var(--gear-size);
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
+    background-size: calc( var(--gear-size) - 15px );
+    background-repeat: no-repeat;
+    background-position: 35% 35%;
+    position: relative;
+
+}
+
+.gear-img[data-enchance]:not([data-enchance=""])::before,
+.spirit-img[data-enchance]:not([data-enchance=""])::before,
+.orb-img[data-enchance]:not([data-enchance=""])::before,
+.dragonItem-img[data-enchance]:not([data-enchance=""])::before,
+.magicStone-img[data-enchance]:not([data-enchance=""])::before,
+.mysticalPiece-img[data-enchance]:not([data-enchance=""])::before,
+.et-img[data-enchance]:not([data-enchance=""])::before
+{
+    content: attr(data-enchance);
+    position: absolute;
+    top: -6px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    /* border: 2px solid green; */
+    border-radius: 50%;
+    color: white;
+    padding: 2px;
+    font-size: 9px;
+    font-weight: 800;
+    text-shadow: -1px 2px 1px #222;
+
+}
+
+.gear-img[data-tier]:not([data-tier=""])::after,
+.spirit-img[data-tier]:not([data-tier=""])::after,
+.orb-img[data-tier]:not([data-tier=""])::after,
+.magicStone-img[data-tier]:not([data-tier=""])::after,
+.et-img[data-tier]:not([data-tier=""])::after
+{
+    content: attr(data-tier);
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom : -2px;
+    left: -2px;
+    border: 1px solid var(--clr-l-1);
+    background-color: rgba(17, 17, 17, 0.7);
+    color: #EEE;
+    border-radius: 50%;
+    font-size: 8px;
+    font-weight: 600;
+    /* line-height: 8px; */
+    padding: 2px;
+    box-sizing:content-box;
+}
+
+.skill-bg {
     border: 2px solid red;
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-}
-.equip-img img { width: 72%;}
-.equip-bg-l { --clr-1: var(--clr-l-1); --clr-2: var(--clr-l-2);--clr-3: var(--clr-l-3);--clr-4: var(--clr-l-4);--clr-5: var(--clr-l-5);}
-.equip-bg-e { --clr-1: var(--clr-e-1);--clr-2: var(--clr-e-2);--clr-3: var(--clr-e-3);--clr-4: var(--clr-e-4);--clr-5: var(--clr-e-5);}
-.equip-bg-r { --clr-1: var(--clr-r-1);--clr-2: var(--clr-r-2);--clr-3: var(--clr-r-3);--clr-4: var(--clr-r-4);--clr-5: var(--clr-r-5);}
-.equip-bg-u { --clr-1: var(--clr-u-1);--clr-2: var(--clr-u-2);--clr-3: var(--clr-u-3);--clr-4: var(--clr-u-4);--clr-5: var(--clr-u-5);}
-/* end of equipments*/
-
-/* ---- skill styles ---- */
-
-
-.skills-img {
-    --_skill-cel-size: var(--cel-size, 30px);
-    width: var(--_skill-cel-size);
-    height: var(--_skill-cel-size);
-    grid-area: 1 / 1 / 4 / 4;
-    border: 2px solid rgb(150, 140, 120);
-    border-radius: 50%;
-    justify-content: center;
-    background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/sp-skill2.webp) no-repeat;
-    background-size: 310px;
-    background-position: 0px 0px;   
-}
-.skills-img:hover {
-    --_skill-cel-size: var(--cel-size, 50px);
-    width: var(--_skill-cel-size);
-    height: var(--_skill-cel-size);
-    background-size: 516px;
+    /* background-clip: content-box; */  
+    background: url(/static/img/sp-skill2.webp) no-repeat;
+    background-size: 469px;
+    position: relative;
+    font-family: 'Roboto' ,sans-serif;
 }
 
+.skill-major {
+    --_side-size: var(--skill-major-size);
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
+}
 
+.skill-minor {
+    --_side-size: var(--skill-minor-size);
+    height: var(--_side-size) !important;
+    width: var(--_side-size) !important;
+}
 
-.skills-tier-1{
+.skill-major::before {
+    content: attr(skill-enchance);
+    position: absolute;
+    top: -4px;
+    right: 0px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    grid-area: 3/ 2/ 4 / 3;
+    justify-content: center;
+    box-sizing: border-box;
+    /* border: 2px solid green; */
+    border-radius: 50%;
+    color: white;
+    padding: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    text-shadow: -1px 2px 1px #222;
 }
 
-.skills-tier-1 span {
+.skill-major::after {
+    content: attr(skill-lvl);
+    position: absolute;
+    width: 12px;
+    height: 12px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: calc(var(--skill-tier-size) + 8px);
-    /* height: var(--skill-tier-size); */ 
-    border: 2px solid rgb(150, 140, 120);
-    border-radius: 50px;
-    background-color: black;
-    font-size: 11px;
-    font-weight: 500;
-    margin-bottom: -5px;
-    margin-left: -5px;
-    color: #FFF;
-    z-index: 4;
-}
-
-{% for class_id_sma in range(6) %} 
-.skill-ma-{{class_id_sma+1}} { background-position: var(--smahpos) var(--smavpos-{{class_id_sma+1}}) ! important ; } {% endfor %}
-
-{% for class_id_smi in range(6) %}
-  {% for skill_id_smi in range(13) %}
-
-.skill-{{skill_id_smi+1}}-{{class_id_smi+1}} { background-position: var(--smihpos-{{skill_id_smi+1}}) var(--smivpos-{{class_id_smi+1}}) ! important ; } {% endfor %} {% endfor %}
-
-
-/* ----- spirits ----------- */
-
-.spirit-frame-l { background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-legendary.webp) no-repeat; }
-.spirit-frame-e { background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-epic.webp) no-repeat; }
-.spirit-frame-r { background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-rare.webp) no-repeat; }
-.spirit-frame-u { background: url(https://file.mir4global.com/xdraco/img/common/nft-detail/img-spirit-bg-uncommon.webp) no-repeat; }
-
-.spirits-img-frame {
-    --_cel-size: var(--cel-size, 30px);
-    width: var(--_cel-size);
-    height: var(--_cel-size); 
-    grid-area: 1 / 1 / -1 / -1;
-    border-radius: 50%;
-    /* border: 3px solid red; */
-    background-size: auto 35px;
-    background-position: center center;  
     justify-content: center;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    z-index: 0;
+    bottom : -2px;
+    left: -2px;
+    outline: 1px solid var(--clr-l-1);
+    background-color: rgba(17, 17, 17, 0.7);
+    color: #EEE;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 8px;
+    padding: 1px 3px;
+    border-radius: 10px;
+    font-family: 'Roboto' ,sans-serif;
 }
 
-.spirits-img-frame img {
-    /* display: flex;
-    align-self: center;
-    justify-self: center; */
-    width: 80%;
-    /* height: 25px; */
-}
-
-.spirits-img-frame:hover {
-    --_cel-size: var(--cel-size, 70px);
-    width: var(--_cel-size);
-    height: var(--_cel-size); 
-    grid-area: 1 / 1 / -1 / -1;
-    border-radius: 50%;
-    /* border: 3px solid red; */
-    background-size: auto 65px;
-    background-position: center center;  
-    justify-content: center;
-    align-items: center;
-    z-index: 0;
-}
-
-
-.spirits-img {
+.skill-minor::before {
+    content: attr(skill-enchance);
+    position: absolute;
+    top: -4px;
+    right: -4px;
     display: flex;
-    --_spirit-cel-size: var(--cel-size, 30px); 
-    width: calc(var(--_spirit-cel-size));
-    height: calc(var(--_spirit-cel-size)); 
-    grid-area: 1 / 1 / 4 / 4;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    /* border: 2px solid green; */
     border-radius: 50%;
-    z-index: 1;
-} 
+    color: white;
+    padding: 2px;
+    font-size: 9px;
+    font-weight: 600;
+    text-shadow: -1px 2px 1px #222;
+}
 
-.spirits-img:hover {
+.skill-minor::after {
+    content: attr(skill-lvl);
+    position: absolute;
+    --_skill-size: 16px;
+    width: var(--_skill-size);
+    height: var(--_skill-size);
     display: flex;
-    --_spirit-cel-size: var(--cel-size, 50px); 
-    width: calc(var(--_spirit-cel-size));
-    height: calc(var(--_spirit-cel-size)); 
-    grid-area: 1 / 1 / 4 / 4;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    bottom : -8px;
+    left: -2px;
+    outline: 1px solid var(--clr-l-2);
+    background-color: rgba(17, 17, 17, 0.7);
+    color: #EEE;
+    font-size: 8px;
+    font-weight: 400;
+    /* padding: 1px; */
     border-radius: 50%;
-    z-index: 1;
+    font-family: 'Roboto' ,sans-serif;
+    box-sizing: content-box;
 }
 
-
-.spirits-img img {
-    /* width: auto; */
-    height: 25px;
+.skill-lvl-badge {
+    position: absolute;  
+    font-family: 'Roboto' ,sans-serif;
+    font-size: 8px;
+    outline: 2px solid GOLD;
+    background-color: #111;
+    color: #EEE;
+    font-weight: 400;
 }
 
-.spirits-img img:hover {
-    /* width: auto; */
-    height: 35px;
+.skill-lvl-major {
+    top: 29px;
+    left: 0px;
+      padding: 1px 4px;
+      border-radius: 10px;
 }
 
+.skill-lvl-minor {
+    top: 15px;
+    left: -2px;
+      padding: 2px;
+    border-radius: 50%;
+}
+
+.skill1-1 { background-position: var(--skill-major-left) var(--skill-major-top-1) !important; }
+.skill2-1 { background-position: var(--skill-minor-left-2) var(--skill-minor-top-1) !important; }
+.skill3-1 { background-position: var(--skill-minor-left-3) var(--skill-minor-top-1) !important; }
+.skill4-1 { background-position: var(--skill-minor-left-4) var(--skill-minor-top-1) !important; }
+.skill5-1 { background-position: var(--skill-minor-left-5) var(--skill-minor-top-1) !important; }
+.skill6-1 { background-position: var(--skill-minor-left-6)var(--skill-minor-top-1) !important; }
+.skill7-1 { background-position: var(--skill-minor-left-7) var(--skill-minor-top-1) !important; }
+.skill8-1 { background-position: var(--skill-minor-left-8) var(--skill-minor-top-1) !important; }
+.skill9-1 { background-position: var(--skill-minor-left-9) var(--skill-minor-top-1) !important; }
+.skill10-1 { background-position: var(--skill-minor-left-10) var(--skill-minor-top-1) !important; }
+.skill11-1 { background-position: var(--skill-minor-left-11) var(--skill-minor-top-1) !important; }
+.skill12-1 { background-position: var(--skill-minor-left-12) var(--skill-minor-top-1) !important; }
+.skill13-1 { background-position: var(--skill-minor-left-13) var(--skill-minor-top-1) !important; }
+
+.skill1-2 { background-position: var(--skill-major-left) var(--skill-major-top-2) !important; }
+.skill2-2 { background-position: var(--skill-minor-left-2) var(--skill-minor-top-2) !important; }
+.skill3-2 { background-position: var(--skill-minor-left-3) var(--skill-minor-top-2) !important; }
+.skill4-2 { background-position: var(--skill-minor-left-4) var(--skill-minor-top-2) !important; }
+.skill5-2 { background-position: var(--skill-minor-left-5) var(--skill-minor-top-2) !important; }
+.skill6-2 { background-position: var(--skill-minor-left-6)var(--skill-minor-top-2) !important; }
+.skill7-2 { background-position: var(--skill-minor-left-7) var(--skill-minor-top-2) !important; }
+.skill8-2 { background-position: var(--skill-minor-left-8) var(--skill-minor-top-2) !important; }
+.skill9-2 { background-position: var(--skill-minor-left-9) var(--skill-minor-top-2) !important; }
+.skill10-2 { background-position: var(--skill-minor-left-10) var(--skill-minor-top-2) !important; }
+.skill11-2 { background-position: var(--skill-minor-left-11) var(--skill-minor-top-2) !important; }
+.skill12-2 { background-position: var(--skill-minor-left-12) var(--skill-minor-top-2) !important; }
+.skill13-2 { background-position: var(--skill-minor-left-13) var(--skill-minor-top-2) !important; }
+
+.skill1-3 { background-position: var(--skill-major-left) var(--skill-major-top-3) !important; }
+.skill2-3 { background-position: var(--skill-minor-left-2) var(--skill-minor-top-3) !important; }
+.skill3-3 { background-position: var(--skill-minor-left-3) var(--skill-minor-top-3) !important; }
+.skill4-3 { background-position: var(--skill-minor-left-4) var(--skill-minor-top-3) !important; }
+.skill5-3 { background-position: var(--skill-minor-left-5) var(--skill-minor-top-3) !important; }
+.skill6-3 { background-position: var(--skill-minor-left-6) var(--skill-minor-top-3) !important; }
+.skill7-3 { background-position: var(--skill-minor-left-7) var(--skill-minor-top-3) !important; }
+.skill8-3 { background-position: var(--skill-minor-left-8) var(--skill-minor-top-3) !important; }
+.skill9-3 { background-position: var(--skill-minor-left-9) var(--skill-minor-top-3) !important; }
+.skill10-3 { background-position: var(--skill-minor-left-10) var(--skill-minor-top-3) !important; }
+.skill11-3 { background-position: var(--skill-minor-left-11) var(--skill-minor-top-3) !important; }
+.skill12-3 { background-position: var(--skill-minor-left-12) var(--skill-minor-top-3) !important; }
+.skill13-3 { background-position: var(--skill-minor-left-13) var(--skill-minor-top-3) !important; }
+
+.skill1-4 { background-position: var(--skill-major-left) var(--skill-major-top-4) !important; }
+.skill2-4 { background-position: var(--skill-minor-left-2) var(--skill-minor-top-4) !important; }
+.skill3-4 { background-position: var(--skill-minor-left-3) var(--skill-minor-top-4) !important; }
+.skill4-4 { background-position: var(--skill-minor-left-4) var(--skill-minor-top-4) !important; }
+.skill5-4 { background-position: var(--skill-minor-left-5) var(--skill-minor-top-4) !important; }
+.skill6-4 { background-position: var(--skill-minor-left-6) var(--skill-minor-top-4) !important; }
+.skill7-4 { background-position: var(--skill-minor-left-7) var(--skill-minor-top-4) !important; }
+.skill8-4 { background-position: var(--skill-minor-left-8) var(--skill-minor-top-4) !important; }
+.skill9-4 { background-position: var(--skill-minor-left-9) var(--skill-minor-top-4) !important; }
+.skill10-4 { background-position: var(--skill-minor-left-10) var(--skill-minor-top-4) !important; }
+.skill11-4 { background-position: var(--skill-minor-left-11) var(--skill-minor-top-4) !important; }
+.skill12-4 { background-position: var(--skill-minor-left-12) var(--skill-minor-top-4) !important; }
+.skill13-4 { background-position: var(--skill-minor-left-13) var(--skill-minor-top-4) !important; }
+
+.skill1-5 { background-position: var(--skill-major-left) var(--skill-major-top-5) !important; }
+.skill2-5 { background-position: var(--skill-minor-left-2) var(--skill-minor-top-5) !important; }
+.skill3-5 { background-position: var(--skill-minor-left-3) var(--skill-minor-top-5) !important; }
+.skill4-5 { background-position: var(--skill-minor-left-4) var(--skill-minor-top-5) !important; }
+.skill5-5 { background-position: var(--skill-minor-left-5) var(--skill-minor-top-5) !important; }
+.skill6-5 { background-position: var(--skill-minor-left-6) var(--skill-minor-top-5) !important; }
+.skill7-5 { background-position: var(--skill-minor-left-7) var(--skill-minor-top-5) !important; }
+.skill8-5 { background-position: var(--skill-minor-left-8) var(--skill-minor-top-5) !important; }
+.skill9-5 { background-position: var(--skill-minor-left-9) var(--skill-minor-top-5) !important; }
+.skill10-5 { background-position: var(--skill-minor-left-10) var(--skill-minor-top-5) !important; }
+.skill11-5 { background-position: var(--skill-minor-left-11) var(--skill-minor-top-5) !important; }
+.skill12-5 { background-position: var(--skill-minor-left-12) var(--skill-minor-top-5) !important; }
+.skill13-5 { background-position: var(--skill-minor-left-13) var(--skill-minor-top-5) !important; }
+
+.skill1-6 { background-position: var(--skill-major-left) var(--skill-major-top-6) !important; }
+.skill2-6 { background-position: var(--skill-minor-left-2) var(--skill-minor-top-6) !important; }
+.skill3-6 { background-position: var(--skill-minor-left-3) var(--skill-minor-top-6) !important; }
+.skill4-6 { background-position: var(--skill-minor-left-4) var(--skill-minor-top-6) !important; }
+.skill5-6 { background-position: var(--skill-minor-left-5) var(--skill-minor-top-6) !important; }
+.skill6-6 { background-position: var(--skill-minor-left-6) var(--skill-minor-top-6) !important; }
+.skill7-6 { background-position: var(--skill-minor-left-7) var(--skill-minor-top-6) !important; }
+.skill8-6 { background-position: var(--skill-minor-left-8) var(--skill-minor-top-6) !important; }
+.skill9-6 { background-position: var(--skill-minor-left-9) var(--skill-minor-top-6) !important; }
+.skill10-6 { background-position: var(--skill-minor-left-10) var(--skill-minor-top-6) !important; }
+.skill11-6 { background-position: var(--skill-minor-left-11) var(--skill-minor-top-6) !important; }
+.skill12-6 { background-position: var(--skill-minor-left-12) var(--skill-minor-top-6) !important; }
+.skill13-6 { background-position: var(--skill-minor-left-13) var(--skill-minor-top-6) !important; }
 
